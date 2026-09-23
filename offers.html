@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -8,25 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-
-        /* =========================
-           СТОРІНКА ПРОПОЗИЦІЙ
-        ========================= */
-
         .offers-intro {
             text-align: center;
-            margin: 20px auto 40px;
+            margin: 30px auto 40px;
             max-width: 750px;
         }
 
         .offers-intro p {
             font-size: 18px;
         }
-
-
-        /* =========================
-           ОСНОВНІ ПРОПОЗИЦІЇ
-        ========================= */
 
         .offers-grid {
             display: grid;
@@ -36,7 +25,6 @@
             margin: 0 auto 60px;
         }
 
-
         .offer-card {
             background-color: rgb(55, 20, 85);
             border-radius: 18px;
@@ -44,15 +32,13 @@
             box-sizing: border-box;
             text-align: center;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.3s;
         }
-
 
         .offer-card:hover {
             transform: translateY(-7px);
             box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
         }
-
 
         .offer-card img {
             width: 100%;
@@ -60,14 +46,7 @@
             object-fit: cover;
             border-radius: 14px;
             display: block;
-            transition: transform 0.3s ease;
         }
-
-
-        .offer-card:hover img {
-            transform: scale(1.03);
-        }
-
 
         .offer-card h3 {
             color: rgb(195, 154, 232);
@@ -75,11 +54,9 @@
             font-size: 22px;
         }
 
-
         .offer-card p {
             line-height: 1.5;
         }
-
 
         .offer-label {
             display: inline-block;
@@ -92,7 +69,6 @@
             margin: 4px 0 8px;
         }
 
-
         .offer-price {
             font-size: 21px;
             font-weight: bold;
@@ -100,16 +76,10 @@
             margin-top: 15px;
         }
 
-
-        /* =========================
-           ЗАГОЛОВОК ПОПКОРНУ
-        ========================= */
-
         .popcorn-section {
             max-width: 1200px;
             margin: 0 auto 60px;
         }
-
 
         .popcorn-title {
             text-align: center;
@@ -118,17 +88,11 @@
             margin-bottom: 10px;
         }
 
-
         .popcorn-subtitle {
             text-align: center;
             font-size: 17px;
             margin-bottom: 35px;
         }
-
-
-        /* =========================
-           РОЗМІРИ ПОПКОРНУ
-        ========================= */
 
         .size-title {
             text-align: center;
@@ -137,14 +101,12 @@
             margin: 35px 0 20px;
         }
 
-
         .sizes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 45px;
         }
-
 
         .size-card {
             background-color: rgb(55, 20, 85);
@@ -153,18 +115,13 @@
             padding: 22px;
             text-align: center;
             box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease,
-                        border-color 0.3s ease,
-                        box-shadow 0.3s ease;
+            transition: 0.3s;
         }
-
 
         .size-card:hover {
             transform: translateY(-5px);
             border-color: rgb(195, 154, 232);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
         }
-
 
         .size-card h3 {
             color: rgb(195, 154, 232);
@@ -172,13 +129,10 @@
             margin: 5px 0 10px;
         }
 
-
         .size-card .grams {
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 8px;
         }
-
 
         .size-card .price {
             font-size: 20px;
@@ -186,17 +140,11 @@
             color: white;
         }
 
-
-        /* =========================
-           СМАКИ ПОПКОРНУ
-        ========================= */
-
         .flavors-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 18px;
         }
-
 
         .flavor-card {
             background-color: rgb(55, 20, 85);
@@ -204,16 +152,12 @@
             padding: 12px;
             text-align: center;
             box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease,
-                        box-shadow 0.3s ease;
+            transition: 0.3s;
         }
-
 
         .flavor-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
         }
-
 
         .flavor-card img {
             width: 100%;
@@ -223,29 +167,21 @@
             display: block;
         }
 
-
         .flavor-card h3 {
             color: rgb(195, 154, 232);
             font-size: 18px;
             margin: 14px 5px 8px;
         }
 
-
         .flavor-card p {
             font-size: 14px;
             line-height: 1.4;
         }
 
-
         .flavor-note {
             color: rgb(220, 200, 240);
             font-size: 13px;
         }
-
-
-        /* =========================
-           ДОДАТКОВІ СНЕКИ
-        ========================= */
 
         .snacks-title {
             text-align: center;
@@ -254,24 +190,7 @@
             margin: 50px 0 30px;
         }
 
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 25px;
-        }
-
-
-        /* =========================
-           АДАПТАЦІЯ
-        ========================= */
-
         @media (max-width: 1000px) {
-
             .offers-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -279,16 +198,10 @@
             .flavors-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
         }
 
-
         @media (max-width: 700px) {
-
-            .offers-grid {
-                grid-template-columns: 1fr;
-            }
-
+            .offers-grid,
             .sizes-grid {
                 grid-template-columns: 1fr;
             }
@@ -296,35 +209,34 @@
             .flavors-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
         }
 
-
         @media (max-width: 450px) {
-
             .flavors-grid {
                 grid-template-columns: 1fr;
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-    <h1>✦CineWave</h1>
+    <!-- ШАПКА -->
 
-    <p class="subtitle">
-        cinema
-    </p>
+    <header>
+
+        <h1 class="logo">
+            ✦CineWave
+        </h1>
+
+        <p class="subtitle">
+            cinema
+        </p>
+
+    </header>
 
 
-    <!-- =========================
-         НАВІГАЦІЯ
-    ========================= -->
+    <!-- ОСНОВНА НАВІГАЦІЯ -->
 
     <nav>
 
@@ -332,34 +244,122 @@
             ⌂ Головна
         </a>
 
-        <a href="movies.html">
-            🎬 Фільми
-        </a>
+        <div class="dropdown">
 
-        <a href="sessions.html">
-            ◷ Сеанси
-        </a>
+            <a href="#">
+                ▣ Розділи ▾
+            </a>
 
-        <a href="halls.html">
-            ▣ Зали
-        </a>
+            <div class="dropdown-menu">
+
+                <a href="movies.html">
+                    Фільми
+                </a>
+
+                <a href="sessions.html">
+                    Сеанси
+                </a>
+
+                <a href="halls.html">
+                    Зали
+                </a>
+
+                <a href="offers.html">
+                    Спецпропозиції
+                </a>
+
+                <a href="service.html">
+                    Послуги
+                </a>
+
+            </div>
+
+        </div>
 
         <a href="tickets.html">
             🎟 Квитки
         </a>
 
         <a href="profile.html">
-            👤 Профіль
+            👤 Кабінет
         </a>
 
     </nav>
 
 
-    <!-- =========================
-         ЗАГОЛОВОК
-    ========================= -->
+    <!-- ВНУТРІШНЯ НАВІГАЦІЯ -->
 
-    <div class="offers-intro">
+    <div class="internal-navigation">
+
+        <a href="index.html#welcome">
+            Про CineWave
+        </a>
+
+        <a href="index.html#afisha">
+            Афіша
+        </a>
+
+        <a href="service.html">
+            Послуги
+        </a>
+
+        <a href="#offers">
+            Спецпропозиції
+        </a>
+
+        <a href="contact.html">
+            Контакти
+        </a>
+
+    </div>
+
+
+    <!-- СЛАЙДЕР -->
+
+    <div class="slider">
+
+        <div class="slide active">
+
+            <h2>
+                🍿 Спецпропозиції CineWave
+            </h2>
+
+            <p>
+                Обирайте снеки та напої для свого кіновечора
+            </p>
+
+        </div>
+
+        <div class="slide">
+
+            <h2>
+                🥤 Напої та снеки
+            </h2>
+
+            <p>
+                Кола, Pepsi, Doritos та морозиво
+            </p>
+
+        </div>
+
+        <div class="slide">
+
+            <h2>
+                🍿 Обери свій попкорн
+            </h2>
+
+            <p>
+                П'ять смаків та три розміри порцій
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ЗАГОЛОВОК -->
+
+    <div class="offers-intro" id="offers">
 
         <h2>
             Спеціальні пропозиції
@@ -373,14 +373,9 @@
     </div>
 
 
-    <!-- =========================
-         КОМБО
-    ========================= -->
+    <!-- КОМБО -->
 
     <div class="offers-grid">
-
-
-        <!-- CINEWAVE COMBO -->
 
         <div class="offer-card">
 
@@ -411,8 +406,6 @@
         </div>
 
 
-        <!-- КІНО-КОМБО -->
-
         <div class="offer-card">
 
             <img
@@ -442,8 +435,6 @@
         </div>
 
 
-        <!-- ДОДАТКОВЕ КОМБО -->
-
         <div class="offer-card">
 
             <img
@@ -472,13 +463,10 @@
 
         </div>
 
-
     </div>
 
 
-    <!-- =========================
-         ПОПКОРН
-    ========================= -->
+    <!-- ПОПКОРН -->
 
     <section class="popcorn-section">
 
@@ -492,10 +480,6 @@
         </p>
 
 
-        <!-- =========================
-             РОЗМІРИ
-        ========================= -->
-
         <h3 class="size-title">
             Розміри порцій
         </h3>
@@ -503,12 +487,9 @@
 
         <div class="sizes-grid">
 
-
             <div class="size-card">
 
-                <h3>
-                    S
-                </h3>
+                <h3>S</h3>
 
                 <p class="grams">
                     100 г
@@ -528,9 +509,7 @@
 
             <div class="size-card">
 
-                <h3>
-                    M
-                </h3>
+                <h3>M</h3>
 
                 <p class="grams">
                     150 г
@@ -550,9 +529,7 @@
 
             <div class="size-card">
 
-                <h3>
-                    L
-                </h3>
+                <h3>L</h3>
 
                 <p class="grams">
                     200 г
@@ -569,13 +546,10 @@
 
             </div>
 
-
         </div>
 
 
-        <!-- =========================
-             СМАКИ
-        ========================= -->
+        <!-- СМАКИ -->
 
         <h3 class="size-title">
             Смаки попкорну
@@ -583,9 +557,6 @@
 
 
         <div class="flavors-grid">
-
-
-            <!-- КЛАСИЧНИЙ -->
 
             <div class="flavor-card">
 
@@ -610,8 +581,6 @@
             </div>
 
 
-            <!-- ВЕРШКОВИЙ -->
-
             <div class="flavor-card">
 
                 <img
@@ -634,8 +603,6 @@
 
             </div>
 
-
-            <!-- СИРНИЙ -->
 
             <div class="flavor-card">
 
@@ -660,8 +627,6 @@
             </div>
 
 
-            <!-- КАРАМЕЛЬНИЙ -->
-
             <div class="flavor-card">
 
                 <img
@@ -685,8 +650,6 @@
             </div>
 
 
-            <!-- СИРНИЙ ЧИЛІ -->
-
             <div class="flavor-card">
 
                 <img
@@ -709,13 +672,10 @@
 
             </div>
 
-
         </div>
 
 
-        <!-- =========================
-             ІНШІ СНЕКИ
-        ========================= -->
+        <!-- ІНШІ СНЕКИ -->
 
         <h2 class="snacks-title">
             🥤 Інші снеки та напої
@@ -723,9 +683,6 @@
 
 
         <div class="offers-grid">
-
-
-            <!-- КОЛА -->
 
             <div class="offer-card">
 
@@ -753,8 +710,6 @@
 
             </div>
 
-
-            <!-- PEPSI -->
 
             <div class="offer-card">
 
@@ -784,8 +739,6 @@
             </div>
 
 
-            <!-- DORITOS -->
-
             <div class="offer-card">
 
                 <img
@@ -812,8 +765,6 @@
 
             </div>
 
-
-            <!-- ПОЛУНИЧНЕ МОРОЗИВО -->
 
             <div class="offer-card">
 
@@ -842,8 +793,6 @@
             </div>
 
 
-            <!-- МАНГОВЕ МОРОЗИВО -->
-
             <div class="offer-card">
 
                 <img
@@ -870,27 +819,73 @@
 
             </div>
 
-
         </div>
 
     </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <!-- FOOTER -->
 
     <footer>
 
+        <div class="social-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
         <p>
-            © 2026 CineWave. Усі права захищені.
+            © 2026 CineWave —
+            кіно, яке хочеться дивитися
         </p>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Головна
+            </a>
+
+            <a href="movies.html">
+                Фільми
+            </a>
+
+            <a href="sessions.html">
+                Сеанси
+            </a>
+
+            <a href="halls.html">
+                Зали
+            </a>
+
+            <a href="tickets.html">
+                🎟 Квитки
+            </a>
+
+            <a href="profile.html">
+                👤 Кабінет
+            </a>
+
+        </div>
 
     </footer>
 
-<script src="js/contact-button.js"></script>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/slider.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/contact-button.js"></script>
 
 </body>
 
 </html>
-```
