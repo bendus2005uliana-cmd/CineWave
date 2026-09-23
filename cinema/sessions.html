@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сеанси — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ШАПКА
+    ========================== -->
+
+    <header>
+
+        <h1 class="logo">✦CineWave</h1>
+
+        <p class="subtitle">cinema</p>
+
+    </header>
+
+
+    <!-- =========================
+         ОСНОВНА НАВІГАЦІЯ
+    ========================== -->
+
+    <nav>
+
+        <a href="index.html">
+            ⌂ Головна
+        </a>
+
+        <div class="dropdown">
+
+            <a href="#" class="active">
+                ▣ Розділи ▾
+            </a>
+
+            <div class="dropdown-menu">
+
+                <a href="movies.html">
+                    Фільми
+                </a>
+
+                <a href="sessions.html">
+                    Сеанси
+                </a>
+
+                <a href="halls.html">
+                    Зали
+                </a>
+
+                <a href="index.html#offers">
+                    Спецпропозиції
+                </a>
+
+                <a href="index.html#services">
+                    Послуги
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a href="tickets.html">
+            🎟 Квитки
+        </a>
+
+        <a href="profile.html">
+            👤 Кабінет
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         ДРУГЕ МЕНЮ
+    ========================== -->
+
+    <div class="internal-navigation">
+
+        <a href="index.html">
+            Про CineWave
+        </a>
+
+        <a href="movies.html">
+            Афіша
+        </a>
+
+        <a href="index.html#services">
+            Послуги
+        </a>
+
+        <a href="index.html#offers">
+            Спецпропозиції
+        </a>
+
+        <a href="index.html#contacts">
+            Контакти
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         БАНЕРНА КРУТИЛКА
+    ========================== -->
+
+    <div class="slider">
+
+        <div class="slide active">
+
+            <h2>
+                🎬 Прем'єри тижня
+            </h2>
+
+            <p>
+                Обирайте фільм та зручний час для перегляду.
+            </p>
+
+        </div>
+
+
+        <div class="slide">
+
+            <h2>
+                🍿 Спецпропозиції
+            </h2>
+
+            <p>
+                Квитки та онлайн-бронювання доступні у кілька кліків.
+            </p>
+
+        </div>
+
+
+        <div class="slide">
+
+            <h2>
+                🎟️ Обирайте свої місця
+            </h2>
+
+            <p>
+                Забронюйте найкраще місце у залі заздалегідь.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ЗАГОЛОВОК
+    ========================== -->
+
+    <h2>
+        Сеанси
+    </h2>
+
+
+    <!-- =========================
+         ВИБІР ДАТИ
+    ========================== -->
+
+    <div class="date-picker">
+
+        <button class="date-button active" data-day="0">
+            Сьогодні
+        </button>
+
+        <button class="date-button" data-day="1">
+            Завтра
+        </button>
+
+        <button class="date-button" data-day="2">
+            Післязавтра
+        </button>
+
+        <button class="date-button" data-day="3">
+            <span class="date-text"></span>
+        </button>
+
+        <button class="date-button" data-day="4">
+            <span class="date-text"></span>
+        </button>
+
+        <button class="date-button" data-day="5">
+            <span class="date-text"></span>
+        </button>
+
+        <button class="date-button" data-day="6">
+            <span class="date-text"></span>
+        </button>
+
+    </div>
+
+
+    <p id="selected-date" class="selected-date">
+        Сеанси на сьогодні
+    </p>
+
+
+    <!-- =========================
+         ДЮНА
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Дюна: Частина друга
+            </h3>
+
+            <p>
+                Зала №1
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="dune"
+                   data-time="14:20"
+                   data-hall="1">
+                    14:20
+                </a>
+
+                <a href="#"
+                   data-movie="dune"
+                   data-time="16:10"
+                   data-hall="1">
+                    16:10
+                </a>
+
+                <a href="#"
+                   data-movie="dune"
+                   data-time="19:40"
+                   data-hall="1">
+                    19:40
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         АВАТАР
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Аватар: Шлях води
+            </h3>
+
+            <p>
+                Зала №2
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="avatar"
+                   data-time="15:00"
+                   data-hall="2">
+                    15:00
+                </a>
+
+                <a href="#"
+                   data-movie="avatar"
+                   data-time="18:30"
+                   data-hall="2">
+                    18:30
+                </a>
+
+                <a href="#"
+                   data-movie="avatar"
+                   data-time="21:30"
+                   data-hall="2">
+                    21:30
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         ОППЕНГЕЙМЕР
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Оппенгеймер
+            </h3>
+
+            <p>
+                Зала №4
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="oppenheimer"
+                   data-time="13:00"
+                   data-hall="4">
+                    13:00
+                </a>
+
+                <a href="#"
+                   data-movie="oppenheimer"
+                   data-time="17:20"
+                   data-hall="4">
+                    17:20
+                </a>
+
+                <a href="#"
+                   data-movie="oppenheimer"
+                   data-time="20:30"
+                   data-hall="4">
+                    20:30
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         ІНТЕРСТЕЛЛАР
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Інтерстеллар
+            </h3>
+
+            <p>
+                Зала №3
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="interstellar"
+                   data-time="12:30"
+                   data-hall="3">
+                    12:30
+                </a>
+
+                <a href="#"
+                   data-movie="interstellar"
+                   data-time="16:00"
+                   data-hall="3">
+                    16:00
+                </a>
+
+                <a href="#"
+                   data-movie="interstellar"
+                   data-time="19:20"
+                   data-hall="3">
+                    19:20
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         ТОП ҐАН
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Топ Ґан: Меверік
+            </h3>
+
+            <p>
+                Зала №5
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="topgun"
+                   data-time="14:00"
+                   data-hall="5">
+                    14:00
+                </a>
+
+                <a href="#"
+                   data-movie="topgun"
+                   data-time="18:10"
+                   data-hall="5">
+                    18:10
+                </a>
+
+                <a href="#"
+                   data-movie="topgun"
+                   data-time="21:00"
+                   data-hall="5">
+                    21:00
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         ЛЮДИНА-ПАВУК
+    ========================== -->
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>
+                Людина-павук: Додому шляху нема
+            </h3>
+
+            <p>
+                Зала №3
+            </p>
+
+            <div class="sessions">
+
+                <a href="#"
+                   data-movie="spiderman"
+                   data-time="15:30"
+                   data-hall="3">
+                    15:30
+                </a>
+
+                <a href="#"
+                   data-movie="spiderman"
+                   data-time="18:40"
+                   data-hall="3">
+                    18:40
+                </a>
+
+                <a href="#"
+                   data-movie="spiderman"
+                   data-time="21:40"
+                   data-hall="3">
+                    21:40
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         ДОДАНІ ЧЕРЕЗ АДМІНКУ СЕАНСИ
+    ========================== -->
+
+    <div id="added-sessions"></div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>
+            ✦CineWave
+        </h3>
+
+        <p>
+            cinema • фільми • сеанси • квитки
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Головна
+            </a>
+
+            <a href="movies.html">
+                Фільми
+            </a>
+
+            <a href="sessions.html">
+                Сеанси
+            </a>
+
+            <a href="tickets.html">
+                Квитки
+            </a>
+
+            <a href="profile.html">
+                Кабінет
+            </a>
+
+        </div>
+
+
+        <div class="social-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 CineWave. Усі права захищено.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           ДАТИ
+        ========================= */
+
+        const dateButtons =
+            document.querySelectorAll(".date-button");
+
+        const selectedDate =
+            document.getElementById("selected-date");
+
+
+        let currentDay = 0;
+
+
+        function getDate(day) {
+
+            const date = new Date();
+
+            date.setDate(
+                date.getDate() + day
+            );
+
+            return date;
+
+        }
+
+
+        function formatDate(date) {
+
+            const day =
+                String(date.getDate()).padStart(2, "0");
+
+            const month =
+                String(date.getMonth() + 1).padStart(2, "0");
+
+            const year =
+                date.getFullYear();
+
+            return day + "." + month + "." + year;
+
+        }
+
+
+        function getDateText(day) {
+
+            const date =
+                getDate(day);
+
+
+            if (day === 0) {
+                return "Сьогодні";
+            }
+
+
+            if (day === 1) {
+                return "Завтра";
+            }
+
+
+            if (day === 2) {
+                return "Післязавтра";
+            }
+
+
+            return formatDate(date);
+
+        }
+
+
+        /* =========================
+           ПОКАЗУЄМО ДАТИ
+        ========================= */
+
+        dateButtons.forEach(function(button) {
+
+            const day =
+                Number(button.dataset.day);
+
+
+            if (day >= 3) {
+
+                button.querySelector(
+                    ".date-text"
+                ).textContent =
+                    formatDate(
+                        getDate(day)
+                    );
+
+            }
+
+        });
+
+
+        /* =========================
+           ДОДАНІ СЕАНСИ
+        ========================= */
+
+        const addedSessions =
+            JSON.parse(
+                localStorage.getItem(
+                    "cinewaveSessions"
+                )
+            ) || [];
+
+
+        const addedContainer =
+            document.getElementById(
+                "added-sessions"
+            );
+
+
+        function showAddedSessions() {
+
+            addedContainer.innerHTML = "";
+
+
+            addedSessions.forEach(
+                function(session) {
+
+                    const card =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    card.className =
+                        "movie-card";
+
+
+                    card.innerHTML = `
+
+                        <section>
+
+                            <h3>
+                                ${session.movie}
+                            </h3>
+
+                            <p>
+                                Зала №${session.hall}
+                            </p>
+
+                            <div class="sessions">
+
+                                <a href="#"
+                                   data-movie="${session.movie}"
+                                   data-time="${session.time}"
+                                   data-hall="${session.hall}">
+
+                                    ${session.time}
+
+                                </a>
+
+                            </div>
+
+                        </section>
+
+                    `;
+
+
+                    addedContainer.appendChild(
+                        card
+                    );
+
+                }
+            );
+
+        }
+
+
+        showAddedSessions();
+
+
+        /* =========================
+           ВИБІР ДАТИ
+        ========================= */
+
+        function selectDate(day) {
+
+            currentDay = day;
+
+
+            dateButtons.forEach(
+                function(button) {
+
+                    button.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            dateButtons.forEach(
+                function(button) {
+
+                    if (
+                        Number(
+                            button.dataset.day
+                        ) === day
+                    ) {
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+
+            selectedDate.textContent =
+                "Сеанси на " +
+                getDateText(day);
+
+
+            localStorage.setItem(
+                "cinewaveSelectedDate",
+                formatDate(
+                    getDate(day)
+                )
+            );
+
+        }
+
+
+        dateButtons.forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        const day =
+                            Number(
+                                button.dataset.day
+                            );
+
+                        selectDate(day);
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================
+           ПЕРЕХІД ДО БРОНЮВАННЯ
+        ========================= */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                const link =
+                    event.target.closest(
+                        ".sessions a"
+                    );
+
+
+                if (!link) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                const movie =
+                    link.dataset.movie;
+
+                const time =
+                    link.dataset.time;
+
+                const hall =
+                    link.dataset.hall;
+
+
+                const date =
+                    formatDate(
+                        getDate(currentDay)
+                    );
+
+
+                window.location.href =
+                    "booking.html?movie=" +
+                    encodeURIComponent(movie) +
+                    "&time=" +
+                    encodeURIComponent(time) +
+                    "&hall=" +
+                    encodeURIComponent(hall) +
+                    "&date=" +
+                    encodeURIComponent(date);
+
+            }
+        );
+
+    </script>
+
+
+    <script src="js/slider.js"></script>
+    <script src="js/analytics.js"></script>
+
+<script src="js/contact-button.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Бронювання — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>✦CineWave</h1>
+    <p class="subtitle">cinema</p>
+
+    <nav>
+        <a href="index.html">⌂ Головна</a>
+        <a href="movies.html">🎬 Фільми</a>
+        <a href="sessions.html">◷ Сеанси</a>
+       <a href="tickets.html">🎟 Квитки</a>
+    </nav>
+
+    <h2>Вибір місця</h2>
+
+    <div class="booking">
+
+        <h3 id="movie-name">Дюна: Частина друга</h3>
+
+        <p id="session-time">Сеанс: 14:20</p>
+
+        <p id="hall-name">Зала №1</p>
+
+        <div class="screen">
+            ЕКРАН
+        </div>
+
+        <h3>Оберіть місце</h3>
+
+        <div class="seats">
+
+            <div class="row">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+            </div>
+
+            <div class="row">
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>10</button>
+                <button>11</button>
+                <button>12</button>
+            </div>
+
+            <div class="row">
+                <button>13</button>
+                <button>14</button>
+                <button>15</button>
+                <button>16</button>
+                <button>17</button>
+                <button>18</button>
+            </div>
+
+        </div>
+
+        <p id="selected-seats">Обрані місця: немає</p>
+
+        <p id="total-price">Вартість: 0 грн</p>
+
+        <button id="confirm-booking">Підтвердити бронювання</button>
+
+        <p id="booking-message"></p>
+        <a id="payment-button" href="#" style="display: none;">
+    Перейти до оплати →</a>
+
+    </div>
+
+    <script src="js/booking.js"></script>
+
+    <script src="js/contact-button.js"></script>
+
+</body>
+</html>

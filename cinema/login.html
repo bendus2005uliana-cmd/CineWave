@@ -1,0 +1,152 @@
+```html
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <h1>✦CineWave</h1>
+    <p class="subtitle">cinema</p>
+
+    <nav>
+        <a href="index.html">⌂ Головна</a>
+        <a href="movies.html">🎬 Фільми</a>
+        <a href="sessions.html">◷ Сеанси</a>
+        <a href="halls.html">▣ Зали</a>
+        <a href="tickets.html">🎟 Квитки</a>
+        <a href="profile.html">👤 Профіль</a>
+    </nav>
+
+    <h2>Вхід до акаунта</h2>
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>👤 Увійти в CineWave</h3>
+
+            <input
+                type="email"
+                id="login-email"
+                placeholder="Ваш email"
+            >
+
+            <br><br>
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Ваш пароль"
+            >
+
+            <br><br>
+
+            <button id="login-button">
+                Увійти
+            </button>
+
+            <p id="login-message"></p>
+
+            <p>
+                Ще немає акаунта?
+                <a href="register.html">
+                    Зареєструватися →
+                </a>
+            </p>
+
+        </section>
+
+    </div>
+<script>
+
+const loginButton =
+    document.getElementById("login-button");
+
+const loginMessage =
+    document.getElementById("login-message");
+
+
+loginButton.addEventListener("click", function() {
+
+    const email =
+        document.getElementById("login-email").value.trim();
+
+    const password =
+        document.getElementById("login-password").value;
+
+
+    const usersData =
+        localStorage.getItem("cinewaveUsers");
+
+
+    if (!usersData) {
+
+        loginMessage.textContent =
+            "❗ Спочатку зареєструйте акаунт.";
+
+        return;
+    }
+
+
+    const users =
+        JSON.parse(usersData);
+
+
+    const user =
+        users.find(function(user) {
+
+            return (
+                user.email === email &&
+                user.password === password
+            );
+
+        });
+
+
+    if (user) {
+
+        localStorage.setItem(
+            "cinewaveUser",
+            JSON.stringify(user)
+        );
+
+        localStorage.setItem(
+            "cinewaveLoggedIn",
+            "true"
+        );
+
+
+        loginMessage.textContent =
+            "✅ Вхід успішний!";
+
+
+        setTimeout(function() {
+
+            window.location.href =
+                "profile.html";
+
+        }, 800);
+
+
+    } else {
+
+        loginMessage.textContent =
+            "❌ Неправильний email або пароль.";
+
+    }
+
+});
+
+</script>
+
+<script src="js/contact-button.js"></script>
+</body>
+
+</html>
+```

@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Мій профіль — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <h1 class="logo">✦CineWave</h1>
+        <p class="subtitle">cinema</p>
+    </header>
+
+
+    <!-- Основне меню -->
+    <nav>
+        <a href="index.html">⌂ Головна</a>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">▣ Розділи ▾</a>
+
+            <div class="dropdown-menu">
+                <a href="movies.html">🎬 Фільми</a>
+                <a href="sessions.html">◷ Сеанси</a>
+                <a href="halls.html">▣ Зали</a>
+                <a href="index.html#offers">🎁 Спецпропозиції</a>
+                <a href="index.html#services">★ Послуги</a>
+            </div>
+        </div>
+
+        <a href="tickets.html">🎟 Квитки</a>
+        <a href="profile.html" class="active">👤 Кабінет</a>
+    </nav>
+
+
+    <!-- Внутрішнє меню -->
+    <div class="internal-navigation">
+        <a href="index.html#about">Про CineWave</a>
+        <a href="index.html#afisha">Афіша</a>
+        <a href="index.html#services">Послуги</a>
+        <a href="index.html#offers">Спецпропозиції</a>
+        <a href="index.html#contacts">Контакти</a>
+    </div>
+
+
+    <!-- Слайдер -->
+    <div class="slider">
+
+        <div class="slide active">
+            <h2>🎬 Прем'єри тижня</h2>
+            <p>Дивіться найцікавіші фільми на великому екрані</p>
+        </div>
+
+        <div class="slide">
+            <h2>🍿 Спецпропозиції</h2>
+            <p>Обирайте фільм та отримуйте приємні бонуси</p>
+        </div>
+
+        <div class="slide">
+            <h2>🎟️ Обирайте свої місця</h2>
+            <p>Забронюйте найкращі місця онлайн</p>
+        </div>
+
+    </div>
+
+
+    <!-- Профіль -->
+    <h2>Мій профіль</h2>
+
+    <div class="movie-card">
+
+        <section>
+
+            <h3>👤 Особисті дані</h3>
+
+            <p>
+                <strong>Ім'я:</strong>
+                <span id="profile-name"></span>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <span id="profile-email"></span>
+            </p>
+
+            <p>
+                <strong>Статус:</strong>
+                <span id="profile-status"></span>
+            </p>
+
+            <p>
+                <strong>Придбано квитків:</strong>
+                <span id="ticket-count">0</span>
+            </p>
+
+            <br>
+
+            <a href="tickets.html" id="tickets-link">
+                🎟 Переглянути мої квитки →
+            </a>
+
+            <br><br>
+
+            <a href="admin.html">
+                ⚙ Адмін-панель
+            </a>
+
+            <br><br>
+
+            <a href="register.html" id="register-link">
+                ✨ Зареєструватися
+            </a>
+
+            <br><br>
+
+            <a href="login.html" id="login-link">
+                🔑 Увійти в акаунт
+            </a>
+
+            <br><br>
+
+            <button id="logout-button">
+                Вийти з акаунта
+            </button>
+
+            <p id="logout-message"></p>
+
+        </section>
+
+    </div>
+
+
+    <!-- Футер -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>✦CineWave</h3>
+                <p>Ваш кінотеатр для незабутніх вражень.</p>
+            </div>
+
+            <div>
+                <h3>Навігація</h3>
+                <a href="index.html">Головна</a>
+                <a href="movies.html">Фільми</a>
+                <a href="sessions.html">Сеанси</a>
+                <a href="halls.html">Зали</a>
+                <a href="tickets.html">Квитки</a>
+            </div>
+
+            <div>
+                <h3>Ми в соцмережах</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">TikTok</a>
+            </div>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 CineWave. Усі права захищені.
+        </p>
+
+    </footer>
+
+
+    <!-- Слайдер -->
+    <script src="js/slider.js"></script>
+    <script src="js/analytics.js"></script>
+
+
+    <!-- Логіка профілю -->
+    <script>
+
+        const userData =
+            localStorage.getItem("cinewaveUser");
+
+        const profileName =
+            document.getElementById("profile-name");
+
+        const profileEmail =
+            document.getElementById("profile-email");
+
+        const profileStatus =
+            document.getElementById("profile-status");
+
+        const ticketCount =
+            document.getElementById("ticket-count");
+
+        const ticketsLink =
+            document.getElementById("tickets-link");
+
+        const registerLink =
+            document.getElementById("register-link");
+
+        const loginLink =
+            document.getElementById("login-link");
+
+        const logoutButton =
+            document.getElementById("logout-button");
+
+        const logoutMessage =
+            document.getElementById("logout-message");
+
+
+        if (userData) {
+
+            const user =
+                JSON.parse(userData);
+
+            profileName.textContent =
+                user.name;
+
+            profileEmail.textContent =
+                user.email;
+
+            profileStatus.textContent =
+                "Зареєстрований користувач";
+
+
+            const ticketData =
+                localStorage.getItem(
+                    "cinewaveTickets-" + user.email
+                );
+
+
+            if (ticketData) {
+
+                const tickets =
+                    JSON.parse(ticketData);
+
+                let totalTickets = 0;
+
+                tickets.forEach(function(ticket) {
+
+                    totalTickets +=
+                        ticket.seats.length;
+
+                });
+
+                ticketCount.textContent =
+                    totalTickets;
+
+            } else {
+
+                ticketCount.textContent =
+                    "0";
+
+            }
+
+
+            ticketsLink.style.display =
+                "inline";
+
+            logoutButton.style.display =
+                "inline-block";
+
+            registerLink.style.display =
+                "none";
+
+            loginLink.style.display =
+                "none";
+
+
+        } else {
+
+            profileName.textContent =
+                "Не виконано вхід";
+
+            profileEmail.textContent =
+                "—";
+
+            profileStatus.textContent =
+                "Гість";
+
+            ticketCount.textContent =
+                "0";
+
+            ticketsLink.style.display =
+                "none";
+
+            logoutButton.style.display =
+                "none";
+
+            registerLink.style.display =
+                "inline";
+
+            loginLink.style.display =
+                "inline";
+        }
+
+
+        logoutButton.addEventListener(
+            "click",
+            function() {
+
+                localStorage.removeItem(
+                    "cinewaveLoggedIn"
+                );
+
+                localStorage.removeItem(
+                    "cinewaveUser"
+                );
+
+                logoutMessage.textContent =
+                    "Ви вийшли з акаунта.";
+
+                logoutButton.disabled =
+                    true;
+
+                setTimeout(function() {
+
+                    window.location.href =
+                        "login.html";
+
+                }, 800);
+
+            }
+        );
+
+    </script>
+
+    <script src="js/contact-button.js"></script>
+
+</body>
+
+</html>
+
