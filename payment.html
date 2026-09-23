@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>✦CineWave</h1>
+    <p class="subtitle">cinema</p>
+
+    <nav>
+        <a href="index.html">⌂ Головна</a>
+        <a href="movies.html">🎬 Фільми</a>
+        <a href="sessions.html">◷ Сеанси</a>
+        <a href="booking.html">🎟 Квитки</a>
+    </nav>
+
+    <h2>Оплата квитка</h2>
+
+    <div class="booking">
+
+        <h3 id="movie-name">Фільм</h3>
+
+        <p id="session-time">Сеанс:</p>
+
+        <p id="hall-name">Зала:</p>
+
+        <p id="seat-info">Місця:</p>
+
+        <p id="price-info">До сплати:</p>
+
+        <h3>Дані картки</h3>
+
+        <input type="text" id="card-number" placeholder="Номер картки">
+
+        <input type="text" id="card-date" placeholder="MM/YY">
+
+        <input type="text" id="card-cvv" placeholder="CVV">
+
+        <input type="text" id="card-name" placeholder="Ім'я власника картки">
+
+       <button type="button" id="pay-button">Оплатити</button>
+
+        <p id="payment-message"></p>
+
+    </div>
+
+   <script src="./js/payment.js"></script>
+   <script src="js/contact-button.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,896 @@
+```html
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Спеціальні пропозиції — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================
+           СТОРІНКА ПРОПОЗИЦІЙ
+        ========================= */
+
+        .offers-intro {
+            text-align: center;
+            margin: 20px auto 40px;
+            max-width: 750px;
+        }
+
+        .offers-intro p {
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           ОСНОВНІ ПРОПОЗИЦІЇ
+        ========================= */
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+
+        .offer-card {
+            background-color: rgb(55, 20, 85);
+            border-radius: 18px;
+            padding: 18px;
+            box-sizing: border-box;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .offer-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .offer-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+
+        .offer-card:hover img {
+            transform: scale(1.03);
+        }
+
+
+        .offer-card h3 {
+            color: rgb(195, 154, 232);
+            margin: 18px 0 10px;
+            font-size: 22px;
+        }
+
+
+        .offer-card p {
+            line-height: 1.5;
+        }
+
+
+        .offer-label {
+            display: inline-block;
+            background-color: rgb(74, 30, 115);
+            color: rgb(220, 200, 240);
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 4px 0 8px;
+        }
+
+
+        .offer-price {
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           ЗАГОЛОВОК ПОПКОРНУ
+        ========================= */
+
+        .popcorn-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+        }
+
+
+        .popcorn-title {
+            text-align: center;
+            color: rgb(195, 154, 232);
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+
+        .popcorn-subtitle {
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           РОЗМІРИ ПОПКОРНУ
+        ========================= */
+
+        .size-title {
+            text-align: center;
+            color: rgb(195, 154, 232);
+            font-size: 24px;
+            margin: 35px 0 20px;
+        }
+
+
+        .sizes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+
+        .size-card {
+            background-color: rgb(55, 20, 85);
+            border: 2px solid transparent;
+            border-radius: 16px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+
+        .size-card:hover {
+            transform: translateY(-5px);
+            border-color: rgb(195, 154, 232);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .size-card h3 {
+            color: rgb(195, 154, 232);
+            font-size: 25px;
+            margin: 5px 0 10px;
+        }
+
+
+        .size-card .grams {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+
+        .size-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+
+        /* =========================
+           СМАКИ ПОПКОРНУ
+        ========================= */
+
+        .flavors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+
+        .flavor-card {
+            background-color: rgb(55, 20, 85);
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+
+        .flavor-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .flavor-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+
+        .flavor-card h3 {
+            color: rgb(195, 154, 232);
+            font-size: 18px;
+            margin: 14px 5px 8px;
+        }
+
+
+        .flavor-card p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+
+        .flavor-note {
+            color: rgb(220, 200, 240);
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           ДОДАТКОВІ СНЕКИ
+        ========================= */
+
+        .snacks-title {
+            text-align: center;
+            color: rgb(195, 154, 232);
+            font-size: 28px;
+            margin: 50px 0 30px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+        }
+
+
+        /* =========================
+           АДАПТАЦІЯ
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            .offers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .flavors-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sizes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .flavors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .flavors-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>✦CineWave</h1>
+
+    <p class="subtitle">
+        cinema
+    </p>
+
+
+    <!-- =========================
+         НАВІГАЦІЯ
+    ========================= -->
+
+    <nav>
+
+        <a href="index.html">
+            ⌂ Головна
+        </a>
+
+        <a href="movies.html">
+            🎬 Фільми
+        </a>
+
+        <a href="sessions.html">
+            ◷ Сеанси
+        </a>
+
+        <a href="halls.html">
+            ▣ Зали
+        </a>
+
+        <a href="tickets.html">
+            🎟 Квитки
+        </a>
+
+        <a href="profile.html">
+            👤 Профіль
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         ЗАГОЛОВОК
+    ========================= -->
+
+    <div class="offers-intro">
+
+        <h2>
+            Спеціальні пропозиції
+        </h2>
+
+        <p>
+            Обирайте улюблені снеки, напої
+            та попкорн для ідеального кіновечора.
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         КОМБО
+    ========================= -->
+
+    <div class="offers-grid">
+
+
+        <!-- CINEWAVE COMBO -->
+
+        <div class="offer-card">
+
+            <img
+                src="images/пес.jpg"
+                alt="CineWave Combo"
+            >
+
+            <h3>
+                🐶 CineWave Combo
+            </h3>
+
+            <span class="offer-label">
+                XL · для компанії
+            </span>
+
+            <p>
+                Великий попкорн XL,
+                дві прохолодні коли
+                та максимум смаку
+                для спільного перегляду.
+            </p>
+
+            <p class="offer-price">
+                320 грн
+            </p>
+
+        </div>
+
+
+        <!-- КІНО-КОМБО -->
+
+        <div class="offer-card">
+
+            <img
+                src="images/попкорн.jpg"
+                alt="Кіно-комбо"
+            >
+
+            <h3>
+                🍿🥤 Кіно-комбо
+            </h3>
+
+            <span class="offer-label">
+                M · стандарт
+            </span>
+
+            <p>
+                Середній попкорн
+                та одна прохолодна кола —
+                класичний варіант
+                для одного глядача.
+            </p>
+
+            <p class="offer-price">
+                220 грн
+            </p>
+
+        </div>
+
+
+        <!-- ДОДАТКОВЕ КОМБО -->
+
+        <div class="offer-card">
+
+            <img
+                src="images/комбо.jpg"
+                alt="Sweet Movie Combo"
+            >
+
+            <h3>
+                🍿 Sweet Movie Combo
+            </h3>
+
+            <span class="offer-label">
+                S · солодке
+            </span>
+
+            <p>
+                Маленький попкорн
+                та солодкий десерт —
+                чудовий варіант
+                для короткого сеансу.
+            </p>
+
+            <p class="offer-price">
+                190 грн
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         ПОПКОРН
+    ========================= -->
+
+    <section class="popcorn-section">
+
+        <h2 class="popcorn-title">
+            🍿 Обери свій попкорн
+        </h2>
+
+        <p class="popcorn-subtitle">
+            Будь-який смак можна обрати
+            у будь-якому доступному розмірі.
+        </p>
+
+
+        <!-- =========================
+             РОЗМІРИ
+        ========================= -->
+
+        <h3 class="size-title">
+            Розміри порцій
+        </h3>
+
+
+        <div class="sizes-grid">
+
+
+            <div class="size-card">
+
+                <h3>
+                    S
+                </h3>
+
+                <p class="grams">
+                    100 г
+                </p>
+
+                <p>
+                    Невелика порція
+                    для легкого перекусу.
+                </p>
+
+                <p class="price">
+                    від 120 грн
+                </p>
+
+            </div>
+
+
+            <div class="size-card">
+
+                <h3>
+                    M
+                </h3>
+
+                <p class="grams">
+                    150 г
+                </p>
+
+                <p>
+                    Стандартна порція
+                    для кіносеансу.
+                </p>
+
+                <p class="price">
+                    від 150 грн
+                </p>
+
+            </div>
+
+
+            <div class="size-card">
+
+                <h3>
+                    L
+                </h3>
+
+                <p class="grams">
+                    200 г
+                </p>
+
+                <p>
+                    Велика порція
+                    для справжніх поціновувачів.
+                </p>
+
+                <p class="price">
+                    від 190 грн
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             СМАКИ
+        ========================= -->
+
+        <h3 class="size-title">
+            Смаки попкорну
+        </h3>
+
+
+        <div class="flavors-grid">
+
+
+            <!-- КЛАСИЧНИЙ -->
+
+            <div class="flavor-card">
+
+                <img
+                    src="images/попкорн2.jpg"
+                    alt="Класичний попкорн"
+                >
+
+                <h3>
+                    🧂 Класичний
+                </h3>
+
+                <p>
+                    Хрусткий солоний попкорн
+                    з традиційним смаком.
+                </p>
+
+                <p class="flavor-note">
+                    Доступний у S / M / L
+                </p>
+
+            </div>
+
+
+            <!-- ВЕРШКОВИЙ -->
+
+            <div class="flavor-card">
+
+                <img
+                    src="images/попкорн6.jpg"
+                    alt="Вершковий попкорн"
+                >
+
+                <h3>
+                    🧈 Вершковий
+                </h3>
+
+                <p>
+                    Ніжний вершковий смак
+                    з легкою солоністю.
+                </p>
+
+                <p class="flavor-note">
+                    Доступний у S / M / L
+                </p>
+
+            </div>
+
+
+            <!-- СИРНИЙ -->
+
+            <div class="flavor-card">
+
+                <img
+                    src="images/попкорн4.jpg"
+                    alt="Сирний попкорн"
+                >
+
+                <h3>
+                    🧀 Сирний
+                </h3>
+
+                <p>
+                    Насичений сирний смак
+                    для любителів снеків.
+                </p>
+
+                <p class="flavor-note">
+                    Доступний у S / M / L
+                </p>
+
+            </div>
+
+
+            <!-- КАРАМЕЛЬНИЙ -->
+
+            <div class="flavor-card">
+
+                <img
+                    src="images/попкорн3.png"
+                    alt="Карамельний попкорн"
+                >
+
+                <h3>
+                    🍯 Карамельний
+                </h3>
+
+                <p>
+                    Солодкий попкорн
+                    з ароматною карамеллю.
+                </p>
+
+                <p class="flavor-note">
+                    Доступний у S / M / L
+                </p>
+
+            </div>
+
+
+            <!-- СИРНИЙ ЧИЛІ -->
+
+            <div class="flavor-card">
+
+                <img
+                    src="images/попкорн5.jpg"
+                    alt="Сирний чилі"
+                >
+
+                <h3>
+                    🌶️ Сирний чилі
+                </h3>
+
+                <p>
+                    Поєднання сирного смаку
+                    та легкої гостроти.
+                </p>
+
+                <p class="flavor-note">
+                    Доступний у S / M / L
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             ІНШІ СНЕКИ
+        ========================= -->
+
+        <h2 class="snacks-title">
+            🥤 Інші снеки та напої
+        </h2>
+
+
+        <div class="offers-grid">
+
+
+            <!-- КОЛА -->
+
+            <div class="offer-card">
+
+                <img
+                    src="images/кола.jpg"
+                    alt="Кола"
+                >
+
+                <h3>
+                    🥤 Кола
+                </h3>
+
+                <span class="offer-label">
+                    0,5 л
+                </span>
+
+                <p>
+                    Класичний прохолодний
+                    напій для кіновечора.
+                </p>
+
+                <p class="offer-price">
+                    70 грн
+                </p>
+
+            </div>
+
+
+            <!-- PEPSI -->
+
+            <div class="offer-card">
+
+                <img
+                    src="images/пепса.jpg"
+                    alt="Pepsi"
+                >
+
+                <h3>
+                    🥤 Pepsi
+                </h3>
+
+                <span class="offer-label">
+                    0,5 л
+                </span>
+
+                <p>
+                    Освіжаюча Pepsi,
+                    яка чудово поєднується
+                    з попкорном.
+                </p>
+
+                <p class="offer-price">
+                    70 грн
+                </p>
+
+            </div>
+
+
+            <!-- DORITOS -->
+
+            <div class="offer-card">
+
+                <img
+                    src="images/дорітос.png"
+                    alt="Doritos"
+                >
+
+                <h3>
+                    🌶️ Doritos
+                </h3>
+
+                <span class="offer-label">
+                    100 г
+                </span>
+
+                <p>
+                    Хрусткі кукурудзяні чипси
+                    з різними смаками.
+                </p>
+
+                <p class="offer-price">
+                    85 грн
+                </p>
+
+            </div>
+
+
+            <!-- ПОЛУНИЧНЕ МОРОЗИВО -->
+
+            <div class="offer-card">
+
+                <img
+                    src="images/морозпол.jpg"
+                    alt="Полуничне морозиво"
+                >
+
+                <h3>
+                    🍓 Полуничне морозиво
+                </h3>
+
+                <span class="offer-label">
+                    150 г
+                </span>
+
+                <p>
+                    Ніжний десерт
+                    із полуничним смаком.
+                </p>
+
+                <p class="offer-price">
+                    90 грн
+                </p>
+
+            </div>
+
+
+            <!-- МАНГОВЕ МОРОЗИВО -->
+
+            <div class="offer-card">
+
+                <img
+                    src="images/морозманго.jpg"
+                    alt="Мангове морозиво"
+                >
+
+                <h3>
+                    🥭 Мангове морозиво
+                </h3>
+
+                <span class="offer-label">
+                    150 г
+                </span>
+
+                <p>
+                    Тропічний десерт
+                    з яскравим смаком манго.
+                </p>
+
+                <p class="offer-price">
+                    90 грн
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 CineWave. Усі права захищені.
+        </p>
+
+    </footer>
+
+<script src="js/contact-button.js"></script>
+
+</body>
+
+</html>
+```

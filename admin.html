@@ -1,0 +1,1686 @@
+```html
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін-панель — CineWave</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- Шапка -->
+    <header>
+        <h1 class="logo">✦CineWave</h1>
+        <p class="subtitle">admin panel</p>
+    </header>
+
+
+    <!-- Основне меню -->
+    <nav>
+        <a href="index.html">⌂ Головна</a>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">▣ Розділи ▾</a>
+
+            <div class="dropdown-menu">
+                <a href="movies.html">🎬 Фільми</a>
+                <a href="sessions.html">◷ Сеанси</a>
+                <a href="halls.html">▣ Зали</a>
+                <a href="services.html">★ Послуги</a>
+                <a href="services.html#offers">🎁 Спецпропозиції</a>
+            </div>
+        </div>
+
+        <a href="tickets.html">🎟 Квитки</a>
+        <a href="profile.html">👤 Кабінет</a>
+    </nav>
+
+
+    <!-- Внутрішнє меню -->
+    <div class="internal-navigation">
+
+        <a href="#movies">Фільми</a>
+
+        <a href="#sessions">Сеанси</a>
+
+        <a href="#halls">Зали</a>
+
+        <a href="#sales">Продажі</a>
+
+        <a href="#requests">Заявки</a>
+
+    </div>
+
+
+    <!-- Слайдер -->
+    <div class="slider">
+
+        <div class="slide active">
+            <h2>🎬 Керування CineWave</h2>
+            <p>Фільми, сеанси та інформація про кінотеатр</p>
+        </div>
+
+        <div class="slide">
+            <h2>💰 Продажі та статистика</h2>
+            <p>Перегляд кількості проданих квитків та виручки</p>
+        </div>
+
+        <div class="slide">
+            <h2>📩 Заявки користувачів</h2>
+            <p>Перегляд звернень відвідувачів кінотеатру</p>
+        </div>
+
+    </div>
+
+
+    <h2>Адмін-панель</h2>
+
+
+    <!-- ГОЛОВНЕ МЕНЮ АДМІНА -->
+
+    <div class="movie-card">
+
+        <h3>Керування кінотеатром</h3>
+
+        <p>
+            Панель адміністратора CineWave
+        </p>
+
+        <br>
+
+        <a href="#movies">
+            🎬 Керування фільмами
+        </a>
+
+        <br><br>
+
+        <a href="#sessions">
+            ◷ Керування сеансами
+        </a>
+
+        <br><br>
+
+        <a href="#halls">
+            ▣ Керування залами
+        </a>
+
+        <br><br>
+
+        <a href="#sales">
+            💰 Продажі та статистика
+        </a>
+
+        <br><br>
+
+        <a href="#requests">
+            📩 Заявки користувачів
+        </a>
+
+    </div>
+
+
+    <!-- ФІЛЬМИ -->
+
+    <div class="movie-card" id="movies">
+
+        <h3>🎬 Керування фільмами</h3>
+
+        <p>
+            Кількість фільмів:
+            <strong id="movie-count">6</strong>
+        </p>
+
+        <h4>Додати новий фільм</h4>
+
+
+        <input
+            type="text"
+            id="movie-title"
+            placeholder="Назва фільму"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-genre"
+            placeholder="Жанр"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-duration"
+            placeholder="Тривалість, наприклад 120 хв"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-age"
+            placeholder="Вікове обмеження, наприклад 16+"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-poster"
+            placeholder="Постер, наприклад avatar.jpeg"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-director"
+            placeholder="Режисер"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="movie-actors"
+            placeholder="Актори"
+        >
+
+        <br><br>
+
+
+        <textarea
+            id="movie-description"
+            placeholder="Детальний опис фільму"
+            rows="6"
+        ></textarea>
+
+        <br><br>
+
+
+        <button
+            type="button"
+            id="add-movie-button"
+        >
+            Додати фільм
+        </button>
+
+
+        <p id="movie-message"></p>
+
+
+        <h4>Додані фільми</h4>
+
+        <div id="movie-list"></div>
+
+    </div>
+
+
+    <!-- СЕАНСИ -->
+
+    <div class="movie-card" id="sessions">
+
+        <h3>◷ Керування сеансами</h3>
+
+        <p>
+            Кількість сеансів:
+            <strong id="session-count">18</strong>
+        </p>
+
+
+        <h4>Додати новий сеанс</h4>
+
+
+        <input
+            type="text"
+            id="session-movie"
+            placeholder="Назва фільму"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="session-time"
+            placeholder="Час, наприклад 18:30"
+        >
+
+        <br><br>
+
+
+        <input
+            type="text"
+            id="session-hall"
+            placeholder="Номер зали, наприклад 2"
+        >
+
+        <br><br>
+
+
+        <button
+            type="button"
+            id="add-session-button"
+        >
+            Додати сеанс
+        </button>
+
+
+        <p id="session-message"></p>
+
+
+        <h4>Додані сеанси</h4>
+
+        <div
+            id="session-list"
+            class="session-list"
+        ></div>
+
+    </div>
+
+
+    <!-- ЗАЛИ -->
+
+    <div class="movie-card" id="halls">
+
+        <h3>▣ Зали</h3>
+
+        <p>
+            Кількість залів:
+            <strong>5</strong>
+        </p>
+
+        <button type="button">
+            Додати зал
+        </button>
+
+        <button type="button">
+            Редагувати зали
+        </button>
+
+        <p>
+            У кінотеатрі доступно 5 залів.
+            Кожна зала має 18 місць.
+        </p>
+
+    </div>
+
+
+    <!-- ПРОДАЖІ -->
+
+    <div class="movie-card" id="sales">
+
+        <h3>💰 Продажі та статистика</h3>
+
+
+        <p>
+            Продано квитків:
+            <strong id="sold-tickets">0</strong>
+        </p>
+
+
+        <p>
+            Загальна виручка:
+            <strong id="total-sales">0 грн</strong>
+        </p>
+
+
+        <p>
+            Кількість відвідувачів:
+            <strong id="visitor-count">0</strong>
+        </p>
+
+
+        <h3>🎬 Продажі по фільмах</h3>
+
+        <div id="movie-sales-list">
+
+            <p>
+                Даних про продажі поки немає.
+            </p>
+
+        </div>
+
+
+        <h3>◷ Продажі по сеансах</h3>
+
+        <div id="session-sales-list">
+
+            <p>
+                Даних про продажі по сеансах поки немає.
+            </p>
+
+        </div>
+
+
+        <h3>🎟 Список продажів</h3>
+
+        <div id="sales-list">
+
+            <p>
+                Продажів поки немає.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ЗАЯВКИ -->
+
+    <div class="movie-card" id="requests">
+
+        <h3>📩 Заявки користувачів</h3>
+
+        <p>
+            Тут відображаються звернення,
+            які користувачі залишили через форму
+            зворотного зв'язку.
+        </p>
+
+
+        <p>
+            Кількість заявок:
+            <strong id="request-count">0</strong>
+        </p>
+
+
+        <div id="request-list">
+
+            <p>
+                Заявок поки немає.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>✦CineWave</h3>
+
+                <p>
+                    Панель керування кінотеатром.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Навігація</h3>
+
+                <a href="index.html">
+                    Головна
+                </a>
+
+                <a href="movies.html">
+                    Фільми
+                </a>
+
+                <a href="sessions.html">
+                    Сеанси
+                </a>
+
+                <a href="halls.html">
+                    Зали
+                </a>
+
+                <a href="tickets.html">
+                    Квитки
+                </a>
+
+                <a href="profile.html">
+                    Кабінет
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Адміністрування</h3>
+
+                <a href="#movies">
+                    Фільми
+                </a>
+
+                <a href="#sessions">
+                    Сеанси
+                </a>
+
+                <a href="#sales">
+                    Продажі
+                </a>
+
+                <a href="#requests">
+                    Заявки
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <p class="copyright">
+            © 2026 CineWave. Усі права захищені.
+        </p>
+
+    </footer>
+
+
+    <!-- СЛАЙДЕР -->
+
+    <script src="js/slider.js"></script>
+    <script src="js/analytics.js"></script>
+
+    <script>
+
+        /* =====================================================
+           КВИТКИ
+        ===================================================== */
+
+        function getAllTickets() {
+
+            let allTickets = [];
+
+
+            for (
+                let i = 0;
+                i < localStorage.length;
+                i++
+            ) {
+
+                const key =
+                    localStorage.key(i);
+
+
+                if (
+                    key &&
+                    key.startsWith("cinewaveTickets-")
+                ) {
+
+                    const ticketData =
+                        localStorage.getItem(key);
+
+
+                    if (ticketData) {
+
+                        try {
+
+                            const tickets =
+                                JSON.parse(ticketData);
+
+
+                            if (Array.isArray(tickets)) {
+
+                                tickets.forEach(
+                                    function(ticket) {
+
+                                        allTickets.push(ticket);
+
+                                    }
+                                );
+
+                            }
+
+                        } catch (error) {
+
+                            console.log(
+                                "Помилка читання квитків",
+                                error
+                            );
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+
+            return allTickets;
+
+        }
+
+
+        /* =====================================================
+           СТАТИСТИКА
+        ===================================================== */
+
+        function showSalesStatistics() {
+
+            const tickets =
+                getAllTickets();
+
+
+            let soldTickets = 0;
+
+            let totalSales = 0;
+
+
+            const movieStatistics = {};
+
+            const sessionStatistics = {};
+
+
+            let salesHTML = "";
+
+
+            tickets.forEach(
+                function(ticket) {
+
+
+                    const seats =
+                        Array.isArray(ticket.seats)
+                            ? ticket.seats
+                            : [];
+
+
+                    const seatsCount =
+                        seats.length;
+
+
+                    const ticketPrice =
+                        Number(ticket.price) || 0;
+
+
+                    soldTickets +=
+                        seatsCount;
+
+
+                    totalSales +=
+                        ticketPrice;
+
+
+                    const movieName =
+                        ticket.movie ||
+                        "Невідомий фільм";
+
+
+                    if (
+                        !movieStatistics[movieName]
+                    ) {
+
+                        movieStatistics[movieName] = {
+
+                            tickets: 0,
+
+                            visitors: 0,
+
+                            money: 0
+
+                        };
+
+                    }
+
+
+                    movieStatistics[movieName].tickets += 1;
+
+                    movieStatistics[movieName].visitors +=
+                        seatsCount;
+
+                    movieStatistics[movieName].money +=
+                        ticketPrice;
+
+
+                    const sessionName =
+                        movieName +
+                        " — " +
+                        (
+                            ticket.time ||
+                            "Час не вказано"
+                        );
+
+
+                    if (
+                        !sessionStatistics[sessionName]
+                    ) {
+
+                        sessionStatistics[sessionName] = {
+
+                            movie: movieName,
+
+                            date:
+                                ticket.date ||
+                                "Дата не вказана",
+
+                            time:
+                                ticket.time ||
+                                "Час не вказано",
+
+                            hall:
+                                ticket.hall ||
+                                "—",
+
+                            tickets: 0,
+
+                            visitors: 0,
+
+                            money: 0
+
+                        };
+
+                    }
+
+
+                    sessionStatistics[sessionName].tickets += 1;
+
+                    sessionStatistics[sessionName].visitors +=
+                        seatsCount;
+
+                    sessionStatistics[sessionName].money +=
+                        ticketPrice;
+
+
+                    salesHTML += `
+
+                        <div class="admin-item">
+
+                            <hr>
+
+                            <p>
+                                <strong>
+                                    № ${ticket.number}
+                                </strong>
+                            </p>
+
+                            <p>
+                                🎬 Фільм:
+                                ${ticket.movie}
+                            </p>
+
+                            <p>
+                                📅 Дата:
+                                ${ticket.date || "Дата не вказана"}
+                            </p>
+
+                            <p>
+                                🕐 Сеанс:
+                                ${ticket.time}
+                            </p>
+
+                            <p>
+                                🏛️ Зала:
+                                №${ticket.hall}
+                            </p>
+
+                            <p>
+                                💺 Місця:
+                                ${seats.join(", ")}
+                            </p>
+
+                            <p>
+                                👥 Відвідувачів:
+                                ${seatsCount}
+                            </p>
+
+                            <p>
+                                💰 Сума:
+                                ${ticketPrice} грн
+                            </p>
+
+                            <p>
+                                ✅ Оплачено
+                            </p>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+
+            document.getElementById(
+                "sold-tickets"
+            ).textContent =
+                soldTickets;
+
+
+            document.getElementById(
+                "total-sales"
+            ).textContent =
+                totalSales + " грн";
+
+
+            document.getElementById(
+                "visitor-count"
+            ).textContent =
+                soldTickets;
+
+
+            const movieSalesList =
+                document.getElementById(
+                    "movie-sales-list"
+                );
+
+
+            movieSalesList.innerHTML = "";
+
+
+            const movieNames =
+                Object.keys(
+                    movieStatistics
+                );
+
+
+            if (
+                movieNames.length === 0
+            ) {
+
+                movieSalesList.innerHTML = `
+                    <p>
+                        Даних про продажі поки немає.
+                    </p>
+                `;
+
+            } else {
+
+                movieNames.forEach(
+                    function(movieName) {
+
+                        const data =
+                            movieStatistics[movieName];
+
+
+                        movieSalesList.innerHTML += `
+
+                            <div class="admin-item">
+
+                                <hr>
+
+                                <h4>
+                                    🎬 ${movieName}
+                                </h4>
+
+                                <p>
+                                    Квитків:
+                                    ${data.tickets}
+                                </p>
+
+                                <p>
+                                    Відвідувачів:
+                                    ${data.visitors}
+                                </p>
+
+                                <p>
+                                    Виручка:
+                                    ${data.money} грн
+                                </p>
+
+                            </div>
+
+                        `;
+
+                    }
+                );
+
+            }
+
+
+            const sessionSalesList =
+                document.getElementById(
+                    "session-sales-list"
+                );
+
+
+            sessionSalesList.innerHTML = "";
+
+
+            const sessionNames =
+                Object.keys(
+                    sessionStatistics
+                );
+
+
+            if (
+                sessionNames.length === 0
+            ) {
+
+                sessionSalesList.innerHTML = `
+                    <p>
+                        Даних про продажі по сеансах поки немає.
+                    </p>
+                `;
+
+            } else {
+
+                sessionNames.forEach(
+                    function(sessionName) {
+
+                        const data =
+                            sessionStatistics[sessionName];
+
+
+                        sessionSalesList.innerHTML += `
+
+                            <div class="admin-item">
+
+                                <hr>
+
+                                <h4>
+                                    🎬 ${data.movie}
+                                </h4>
+
+                                <p>
+                                    📅 Дата:
+                                    ${data.date}
+                                </p>
+
+                                <p>
+                                    🕐 Час:
+                                    ${data.time}
+                                </p>
+
+                                <p>
+                                    🏛️ Зала:
+                                    №${data.hall}
+                                </p>
+
+                                <p>
+                                    🎟 Квитків:
+                                    ${data.tickets}
+                                </p>
+
+                                <p>
+                                    👥 Відвідувачів:
+                                    ${data.visitors}
+                                </p>
+
+                                <p>
+                                    💰 Виручка:
+                                    ${data.money} грн
+                                </p>
+
+                            </div>
+
+                        `;
+
+                    }
+                );
+
+            }
+
+
+            const salesList =
+                document.getElementById(
+                    "sales-list"
+                );
+
+
+            if (
+                salesHTML !== ""
+            ) {
+
+                salesList.innerHTML =
+                    salesHTML;
+
+            } else {
+
+                salesList.innerHTML = `
+                    <p>
+                        Продажів поки немає.
+                    </p>
+                `;
+
+            }
+
+        }
+
+
+        showSalesStatistics();
+
+
+        /* =====================================================
+           ФІЛЬМИ
+        ===================================================== */
+
+        const addMovieButton =
+            document.getElementById(
+                "add-movie-button"
+            );
+
+
+        const movieMessage =
+            document.getElementById(
+                "movie-message"
+            );
+
+
+        const movieList =
+            document.getElementById(
+                "movie-list"
+            );
+
+
+        const movieCount =
+            document.getElementById(
+                "movie-count"
+            );
+
+
+        function showMovies() {
+
+            const movies =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveMovies"
+                    )
+                ) || [];
+
+
+            movieCount.textContent =
+                6 + movies.length;
+
+
+            movieList.innerHTML = "";
+
+
+            if (
+                movies.length === 0
+            ) {
+
+                movieList.innerHTML =
+                    "<p>Доданих фільмів поки немає.</p>";
+
+                return;
+
+            }
+
+
+            movies.forEach(
+                function(movie, index) {
+
+                    movieList.innerHTML += `
+
+                        <div class="admin-item">
+
+                            <hr>
+
+                            <h4>
+                                ${movie.title}
+                            </h4>
+
+                            <p>
+                                Жанр:
+                                ${movie.genre}
+                            </p>
+
+                            <p>
+                                Тривалість:
+                                ${movie.duration}
+                            </p>
+
+                            <p>
+                                Вікове обмеження:
+                                ${movie.age}
+                            </p>
+
+                            <p>
+                                Режисер:
+                                ${movie.director || "Не вказано"}
+                            </p>
+
+                            <p>
+                                Актори:
+                                ${movie.actors || "Не вказано"}
+                            </p>
+
+                            <p>
+                                Постер:
+                                ${movie.poster}
+                            </p>
+
+                            <p>
+                                ${movie.description}
+                            </p>
+
+                            <button
+                                type="button"
+                                onclick="deleteMovie(${index})"
+                            >
+                                🗑 Видалити фільм
+                            </button>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           ДОДАВАННЯ ФІЛЬМУ
+        ===================================================== */
+
+        addMovieButton.addEventListener(
+            "click",
+            function() {
+
+
+                const title =
+                    document.getElementById(
+                        "movie-title"
+                    ).value.trim();
+
+
+                const genre =
+                    document.getElementById(
+                        "movie-genre"
+                    ).value.trim();
+
+
+                const duration =
+                    document.getElementById(
+                        "movie-duration"
+                    ).value.trim();
+
+
+                const age =
+                    document.getElementById(
+                        "movie-age"
+                    ).value.trim();
+
+
+                const poster =
+                    document.getElementById(
+                        "movie-poster"
+                    ).value.trim();
+
+
+                const director =
+                    document.getElementById(
+                        "movie-director"
+                    ).value.trim();
+
+
+                const actors =
+                    document.getElementById(
+                        "movie-actors"
+                    ).value.trim();
+
+
+                const description =
+                    document.getElementById(
+                        "movie-description"
+                    ).value.trim();
+
+
+                if (
+                    title === "" ||
+                    genre === "" ||
+                    duration === "" ||
+                    age === "" ||
+                    poster === "" ||
+                    director === "" ||
+                    actors === "" ||
+                    description === ""
+                ) {
+
+                    movieMessage.textContent =
+                        "❗ Заповніть усі поля.";
+
+                    return;
+
+                }
+
+
+                let movies =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "cinewaveMovies"
+                        )
+                    ) || [];
+
+
+                const movie = {
+
+                    title: title,
+
+                    genre: genre,
+
+                    duration: duration,
+
+                    age: age,
+
+                    poster:
+                        "images/" + poster,
+
+                    director:
+                        director,
+
+                    actors:
+                        actors,
+
+                    description:
+                        description
+
+                };
+
+
+                movies.push(movie);
+
+
+                localStorage.setItem(
+                    "cinewaveMovies",
+                    JSON.stringify(movies)
+                );
+
+
+                movieMessage.textContent =
+                    "Фільм успішно додано.";
+
+
+                document.getElementById(
+                    "movie-title"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-genre"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-duration"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-age"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-poster"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-director"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-actors"
+                ).value = "";
+
+
+                document.getElementById(
+                    "movie-description"
+                ).value = "";
+
+
+                showMovies();
+
+            }
+        );
+
+
+        /* =====================================================
+           ВИДАЛЕННЯ ФІЛЬМУ
+        ===================================================== */
+
+        function deleteMovie(index) {
+
+            let movies =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveMovies"
+                    )
+                ) || [];
+
+
+            const movieName =
+                movies[index].title;
+
+
+            const confirmDelete =
+                confirm(
+                    "Видалити фільм «" +
+                    movieName +
+                    "»?"
+                );
+
+
+            if (!confirmDelete) {
+
+                return;
+
+            }
+
+
+            movies.splice(
+                index,
+                1
+            );
+
+
+            localStorage.setItem(
+                "cinewaveMovies",
+                JSON.stringify(movies)
+            );
+
+
+            movieMessage.textContent =
+                "Фільм видалено.";
+
+
+            showMovies();
+
+        }
+
+
+        showMovies();
+
+
+        /* =====================================================
+           СЕАНСИ
+        ===================================================== */
+
+        const addSessionButton =
+            document.getElementById(
+                "add-session-button"
+            );
+
+
+        const sessionMessage =
+            document.getElementById(
+                "session-message"
+            );
+
+
+        const sessionList =
+            document.getElementById(
+                "session-list"
+            );
+
+
+        const sessionCount =
+            document.getElementById(
+                "session-count"
+            );
+
+
+        function showSessions() {
+
+            const sessions =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveSessions"
+                    )
+                ) || [];
+
+
+            sessionCount.textContent =
+                18 + sessions.length;
+
+
+            sessionList.innerHTML = "";
+
+
+            if (
+                sessions.length === 0
+            ) {
+
+                sessionList.innerHTML =
+                    "<p>Доданих сеансів поки немає.</p>";
+
+                return;
+
+            }
+
+
+            sessions.forEach(
+                function(session, index) {
+
+                    sessionList.innerHTML += `
+
+                        <div class="admin-item">
+
+                            <hr>
+
+                            <h4>
+                                ${session.movie}
+                            </h4>
+
+                            <p>
+                                🕐 Час:
+                                ${session.time}
+                            </p>
+
+                            <p>
+                                🏛️ Зала:
+                                №${session.hall}
+                            </p>
+
+                            <button
+                                type="button"
+                                onclick="deleteSession(${index})"
+                            >
+                                🗑 Видалити сеанс
+                            </button>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+        }
+
+
+        addSessionButton.addEventListener(
+            "click",
+            function() {
+
+
+                const movie =
+                    document.getElementById(
+                        "session-movie"
+                    ).value.trim();
+
+
+                const time =
+                    document.getElementById(
+                        "session-time"
+                    ).value.trim();
+
+
+                const hall =
+                    document.getElementById(
+                        "session-hall"
+                    ).value.trim();
+
+
+                if (
+                    movie === "" ||
+                    time === "" ||
+                    hall === ""
+                ) {
+
+                    sessionMessage.textContent =
+                        "❗ Заповніть усі поля.";
+
+                    return;
+
+                }
+
+
+                let sessions =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "cinewaveSessions"
+                        )
+                    ) || [];
+
+
+                sessions.push({
+
+                    movie: movie,
+
+                    time: time,
+
+                    hall: hall
+
+                });
+
+
+                localStorage.setItem(
+                    "cinewaveSessions",
+                    JSON.stringify(sessions)
+                );
+
+
+                sessionMessage.textContent =
+                    "Сеанс успішно додано.";
+
+
+                document.getElementById(
+                    "session-movie"
+                ).value = "";
+
+
+                document.getElementById(
+                    "session-time"
+                ).value = "";
+
+
+                document.getElementById(
+                    "session-hall"
+                ).value = "";
+
+
+                showSessions();
+
+            }
+        );
+
+
+        function deleteSession(index) {
+
+            let sessions =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveSessions"
+                    )
+                ) || [];
+
+
+            const sessionName =
+                sessions[index].movie +
+                " — " +
+                sessions[index].time;
+
+
+            const confirmDelete =
+                confirm(
+                    "Видалити сеанс «" +
+                    sessionName +
+                    "»?"
+                );
+
+
+            if (!confirmDelete) {
+
+                return;
+
+            }
+
+
+            sessions.splice(
+                index,
+                1
+            );
+
+
+            localStorage.setItem(
+                "cinewaveSessions",
+                JSON.stringify(sessions)
+            );
+
+
+            sessionMessage.textContent =
+                "Сеанс видалено.";
+
+
+            showSessions();
+
+        }
+
+
+        showSessions();
+
+
+        /* =====================================================
+           ЗАЯВКИ КОРИСТУВАЧІВ
+        ===================================================== */
+
+        const requestList =
+            document.getElementById(
+                "request-list"
+            );
+
+
+        const requestCount =
+            document.getElementById(
+                "request-count"
+            );
+
+
+        function showRequests() {
+
+            const requests =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveRequests"
+                    )
+                ) || [];
+
+
+            requestCount.textContent =
+                requests.length;
+
+
+            requestList.innerHTML = "";
+
+
+            if (
+                requests.length === 0
+            ) {
+
+                requestList.innerHTML = `
+                    <p>
+                        Заявок поки немає.
+                    </p>
+                `;
+
+                return;
+
+            }
+
+
+            requests.forEach(
+                function(request, index) {
+
+                    requestList.innerHTML += `
+
+                        <div class="admin-item">
+
+                            <hr>
+
+                            <h4>
+                                📩 Заявка №${index + 1}
+                            </h4>
+
+                            <p>
+                                👤 <strong>Ім'я:</strong>
+                                ${request.name}
+                            </p>
+
+                            <p>
+                                ✉ <strong>Email:</strong>
+                                ${request.email}
+                            </p>
+
+                            <p>
+                                📌 <strong>Тема:</strong>
+                                ${request.topic}
+                            </p>
+
+                            <p>
+                                💬 <strong>Повідомлення:</strong>
+                                ${request.message}
+                            </p>
+
+                            <p>
+                                📅 <strong>Дата:</strong>
+                                ${request.date}
+                            </p>
+
+                            <button
+                                type="button"
+                                onclick="deleteRequest(${index})"
+                            >
+                                🗑 Видалити заявку
+                            </button>
+
+                        </div>
+
+                    `;
+
+                }
+            );
+
+        }
+
+
+        function deleteRequest(index) {
+
+            let requests =
+                JSON.parse(
+                    localStorage.getItem(
+                        "cinewaveRequests"
+                    )
+                ) || [];
+
+
+            if (
+                !confirm(
+                    "Видалити цю заявку?"
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            requests.splice(
+                index,
+                1
+            );
+
+
+            localStorage.setItem(
+                "cinewaveRequests",
+                JSON.stringify(requests)
+            );
+
+
+            showRequests();
+
+        }
+
+
+        showRequests();
+
+    </script>
+    <script src="js/contact-button.js"></script>
+
+</body>
+
+</html>
+```
